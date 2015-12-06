@@ -8,14 +8,20 @@ sys.path.insert(0, caffe_root + 'python')
 import caffe
 
 img_file_name = 'test.png'
+FINETUNE = True
 img = Image.open(img_file_name)
 img = np.array(img, dtype=np.float32)
 caffe.set_mode_gpu()
 caffe.set_device(0)
+base_weight = lenet_iter_10000.caffemodel
 # load net
 model_root = './'
-net = caffe.Net(model_root+'lenet.prototxt','lenet_iter_10000.caffemodel', caffe.TEST)
-# shape for input (data blob is N x C x H x W), set data
+if FINETUNE:
+	#finetuen:copy weight from a existing model
+	net = caffe.Net(model_root+'lenet.prototxt','lenet_iter_10000.caffemodel', caffe.TEST)
+else:
+	net = caffe.Net(model_root+'lenet.prototxt', caffe.TEST)
+
 # run net and take argmax for prediction
 net.forward()
 

@@ -24,7 +24,7 @@ conv1_w = net.params['conv1'][0].data
 #iterate 10 times 
 solver.step(10)
 
-#cause of a trained model, loss would be small enough after 10 iters
+#cause of a well trained model, loss would be small enough after 10 iters
 print net.blobs['loss'].data
 conv1_w_after_iter = net.params['conv1'][0].data
 

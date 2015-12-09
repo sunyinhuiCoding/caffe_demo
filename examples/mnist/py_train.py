@@ -17,7 +17,7 @@ caffe.set_device(0)
 
 solver = caffe.SGDSolver('lenet_solver.prototxt')
 
-
+#finetune, copy weight from a trained model. optional
 solver.net.copy_from(base_weights)
 net = solver.net
 conv1_w = net.params['conv1'][0].data

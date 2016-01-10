@@ -18,7 +18,7 @@
   2 将数据转换为`lmdb`格式，执行`examples/mnist/creat_mnist.sh`；  
   3 训练，执行`examples/mnist/train_lenet.sh`    
   
-  **注意，以上1-2步的shell脚本必须在caffe根目录下执行！，3步的脚本在脚本目录执行**   
+  **注意，以上1-3步的shell脚本必须在caffe根目录下执行！**   
 
 * 如果不想自己训练模型，可以[下载](http://7xocv2.dl1.z0.glb.clouddn.com/lenet_iter_10000.caffemodel)我训练好的model到`examples/mnist/`目录。
 * 在`examples/mnist/`目录下执行matlab脚本`matdemo.m`，使用matlab接口进行模型预测，参数可视化以及参数调整。
